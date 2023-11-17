@@ -17,16 +17,16 @@ story = Story(
 @app.route('/story')
 def home():
     """Show story page"""
-    place = request.args.get('place')
-    noun = request.args.get('noun')
-    verb = request.args.get('verb')
-    adjective = request.args.get('adjective')
-    plural_noun = request.args.get('plural')
+    # place = request.args.get('place')
+    # noun = request.args.get('noun')
+    # verb = request.args.get('verb')
+    # adjective = request.args.get('adjective')
+    # plural_noun = request.args.get('plural')
     
-    new_story = story.generate({"place": place, "noun": noun, "verb": verb, "adjective": adjective, "plural_noun": plural_noun})
+    new_story = story.generate(request.args)
     return render_template('story.html', story=new_story)
 
 @app.route('/')
 def show_story():
     """Show home page"""
-    return render_template('form.html')
+    return render_template('form.html', prompts=story.prompts)

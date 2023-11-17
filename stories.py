@@ -44,4 +44,5 @@ story = Story(
        large {adjective} {noun}. It loved to {verb} {plural_noun}."""
 )
 
-print(story.generate({"place": "New York", "noun": "dog", "verb": "eat", "adjective": "big", "plural_noun": "cats"}))
+# print(story.generate({"place": "New York", "noun": "dog", "verb": "eat", "adjective": "big", "plural_noun": "cats"}))
+print(story.prompts)
